@@ -26,12 +26,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     editor.cpp \
-    block.cpp
+    block.cpp \
+    selection.cpp
 
 HEADERS += \
         mainwindow.h \
     editor.h \
-    block.h
+    block.h \
+    selection.h
 
 FORMS += \
         mainwindow.ui

@@ -2,6 +2,7 @@
 
 #include <QBrush>
 #include <QImage>
+#include <QKeyEvent>
 #include <QMouseEvent>
 #include <QPointF>
 #include <QString>
@@ -10,15 +11,17 @@
 xEditor::xEditor(int viewWidth, int viewHeight): QGraphicsView () {
 
     //create the scene
-    scene = new QGraphicsScene(this);
+    scene = new QGraphicsScene();
     scene->setSceneRect(0, 0, viewWidth, viewHeight);
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     //draw selection
-    selection = new QGraphicsPixmapItem;
+    selection = new xSelection;
     selection->setPixmap(QPixmap(":/img/selection.png"));
+    selection->setFlag(QGraphicsItem::ItemIsFocusable);
+    selection->setFocus();
     selection->setPos(0, 0);
     scene->addItem(selection);
 }

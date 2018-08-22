@@ -5,7 +5,6 @@
 #include <QDir>
 #include <QString>
 #include <QIcon>
-#include <QMouseEvent>
 #include <QDebug>
 
 xEditor *editor;

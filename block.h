@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
-#include <QKeyEvent>
+
 
 
 class xBlock : public QObject, public QGraphicsPixmapItem {

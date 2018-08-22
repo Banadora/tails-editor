@@ -8,6 +8,8 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QPoint>
+#include <QMouseEvent>
+#include <QKeyEvent>
 
 namespace Ui { class xMainWindow; }
 
@@ -21,8 +23,6 @@ public:
     void getImgFiles();
 
     void mousePressEvent(QMouseEvent *e);
-
-    //Ui::xMainWindow *ui;
 
 private slots:
 
