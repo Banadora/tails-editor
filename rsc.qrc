@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/background.png</file>
+        <file>img/selection.png</file>
+        <file>img/blank.png</file>
+        <file>img/grass0.png</file>
+        <file>img/grass1.png</file>
+        <file>img/mud0.png</file>
+        <file>img/mud1.png</file>
+        <file>img/mud2.png</file>
+        <file>img/mud3.png</file>
+        <file>img/mud4.png</file>
+        <file>img/mud5.png</file>
+        <file>img/mud6.png</file>
+    </qresource>
+</RCC>
