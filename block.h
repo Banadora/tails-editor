@@ -13,30 +13,10 @@ class xBlock : public QObject, public QGraphicsPixmapItem {
 
 protected:
     QString name;
-    int width;
-    int height;
-    int x;
-    int y;
-    bool obstacle;
+    bool isObstacle;
 
 public:
-    xBlock(QString blockName);
-
-    void setName (QString nName);
-    QString getName();
-
-    void setX (int nX);
-    void setY (int nY);
-    int getX();
-    int getY();
-
-    void defineIfObstacle(QString blockName);
-    bool isObstacle();
-
-    //virtual exit funcs:
-    virtual int getDestinationLayout() const;
-    virtual int getDestinationX() const;
-    virtual int getDestinationY() const;
+    xBlock(QString blockName, bool isObs);
 };
 
 #endif // BLOCK_H

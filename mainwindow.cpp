@@ -25,6 +25,7 @@ xMainWindow::xMainWindow(QWidget *parent) :
 
 xMainWindow::~xMainWindow() {
     delete ui;
+    delete block;
 }
 
 void xMainWindow::getImgFiles() {
@@ -48,4 +49,11 @@ void xMainWindow::mousePressEvent(QMouseEvent *e) {
 
 void xMainWindow::on_ImagesList_currentTextChanged(const QString &arg1) {
     ui->blockIcon->setIcon(QIcon(":/img/" + arg1));
+}
+
+void xMainWindow::on_placeBlock_clicked() {
+    block = new xBlock(ui->ImagesList->currentText(), ui->isObstacleBox);
+    qDebug() << ui->ImagesList->currentText();
+    block->setPos(editor->selection->pos().x(), editor->selection->pos().y());
+    editor->scene->addItem(block);
 }

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "editor.h"
+#include "block.h"
 
 #include <QMainWindow>
 #include <QGraphicsView>
@@ -21,15 +22,18 @@ public:
 
     void mousePressEvent(QMouseEvent *e);
 
-    Ui::xMainWindow *ui;
+    //Ui::xMainWindow *ui;
 
 private slots:
 
     void on_ImagesList_currentTextChanged(const QString &arg1);
 
+    void on_placeBlock_clicked();
+
 private:
-    //Ui::xMainWindow *ui;
+    Ui::xMainWindow *ui;
     QPoint clickedPt;
+    xBlock *block;
 };
 
 #endif // MAINWINDOW_H
