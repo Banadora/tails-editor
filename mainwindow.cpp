@@ -24,7 +24,6 @@ xMainWindow::xMainWindow(QWidget *parent) :
 
 xMainWindow::~xMainWindow() {
     delete ui;
-    delete block;
 }
 
 void xMainWindow::getImgFiles() {
@@ -40,19 +39,18 @@ void xMainWindow::getImgFiles() {
 }
 
 void xMainWindow::mousePressEvent(QMouseEvent *e) {
-    qDebug() << "~~~~ New click ~~~~";
-    clickedPt = e->pos();
-    qDebug() << clickedPt;
-    editor->setSelectPos(e->pos().x(), e->pos().y());
+    if (    (e->pos().x() >= 0)  &&  (e->pos().x() <= 384)  &&  (e->pos().y() >= 0)  &&  (e->pos().y() <= 384)    ) {
+        qDebug() << "~~~~ New click ~~~~";
+        clickedPt = e->pos();
+        qDebug() << clickedPt;
+        editor->setSelectPos(e->pos().x(), e->pos().y());
+    }
 }
 
 void xMainWindow::on_ImagesList_currentTextChanged(const QString &arg1) {
     ui->blockIcon->setIcon(QIcon(":/img/" + arg1));
 }
 
-void xMainWindow::on_placeBlock_clicked() {
-    block = new xBlock(ui->ImagesList->currentText(), ui->isObstacleBox);
-    qDebug() << ui->ImagesList->currentText();
-    block->setPos(editor->selection->pos().x(), editor->selection->pos().y());
-    editor->scene->addItem(block);
+void xMainWindow::on_placeBlock_clicked() {    
+    editor->placeBlock(ui->ImagesList->currentText(), ui->isObstacleBox);
 }

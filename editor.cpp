@@ -2,8 +2,6 @@
 
 #include <QBrush>
 #include <QImage>
-#include <QKeyEvent>
-#include <QMouseEvent>
 #include <QPointF>
 #include <QString>
 #include <QDebug>
@@ -30,5 +28,12 @@ void xEditor::setSelectPos(int nX, int nY) {
     selection->setPos(nX/32*32, nY/32*32);
     qDebug() << nX/32;
     qDebug() << nY/32;
+}
+
+void xEditor::placeBlock(QString name, bool isObs) {
+    block = new xBlock(name, isObs);
+    //qDebug() << ui->ImagesList->currentText();
+    block->setPos(selection->pos().x(), selection->pos().y());
+    scene->addItem(block);
 }
 

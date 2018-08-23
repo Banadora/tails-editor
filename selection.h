@@ -1,17 +1,18 @@
 #ifndef SELECTION_H
 #define SELECTION_H
 
+#include "block.h"
+
 #include <QObject>
 #include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
-#include <QKeyEvent>
 
 class xSelection : public QObject, public QGraphicsPixmapItem {
 
 public:
     xSelection();
 
-    void keyPressEvent(QKeyEvent *e);
+    void move(QString direction);
 };
 
 #endif // SELECTION_H

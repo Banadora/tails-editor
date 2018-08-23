@@ -2,12 +2,12 @@
 #define EDITOR_H
 
 #include "selection.h"
+#include "block.h"
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
-#include <QKeyEvent>
 
 class xEditor: public QGraphicsView {
 
@@ -15,9 +15,11 @@ public:
     xEditor(int viewWidth, int viewHeight);
 
     void setSelectPos(int nX, int nY);
+    void placeBlock(QString name, bool isObs);
 
     QGraphicsScene *scene;
     xSelection *selection;
+    xBlock *block;
 };
 
 #endif // EDITOR_H

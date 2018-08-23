@@ -2,14 +2,12 @@
 #define MAINWINDOW_H
 
 #include "editor.h"
-#include "block.h"
 
 #include <QMainWindow>
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QPoint>
 #include <QMouseEvent>
-#include <QKeyEvent>
 
 namespace Ui { class xMainWindow; }
 
@@ -33,7 +31,6 @@ private slots:
 private:
     Ui::xMainWindow *ui;
     QPoint clickedPt;
-    xBlock *block;
 };
 
 #endif // MAINWINDOW_H

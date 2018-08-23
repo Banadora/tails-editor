@@ -27,13 +27,15 @@ SOURCES += \
         mainwindow.cpp \
     editor.cpp \
     block.cpp \
-    selection.cpp
+    selection.cpp \
+    eventfilter.cpp
 
 HEADERS += \
         mainwindow.h \
     editor.h \
     block.h \
-    selection.h
+    selection.h \
+    eventfilter.h
 
 FORMS += \
         mainwindow.ui
