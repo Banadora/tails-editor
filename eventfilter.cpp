@@ -1,17 +1,28 @@
 #include "eventfilter.h"
 #include "editor.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
+#include <QApplication>
 #include <QKeyEvent>
+#include <QList>
 #include <QDebug>
 
 extern xEditor *editor;
 
-xEventFilter::xEventFilter(QObject *parent) :
-    QObject(parent)
-{ }
+xEventFilter::xEventFilter(QObject *parent, xMainWindow *nW) :
+    QObject(parent),
+    w(nW)
+{
+    qDebug() << w;
+}
 
 bool xEventFilter::eventFilter(QObject *obj, QEvent *event)
 {
+    /*QList<QWidget *> apps = QApplication::topLevelWidgets();
+    xMainWindow *mw = dynamic_cast<xMainWindow*>(apps[0]);
+    w = mw;*/
+
     if (event->type() != QEvent::KeyPress)
         return QObject::eventFilter(obj, event);
 
@@ -28,7 +39,8 @@ bool xEventFilter::eventFilter(QObject *obj, QEvent *event)
         case Qt::Key_D:         { editor->selection->move("east"); break; }
         case Qt::Key_Right:     { editor->selection->move("east"); break; }
 
-        case Qt::Key_Space:     { break; }
+        case Qt::Key_Space:     { w->on_placeBlock_clicked(); break; }
+
     }
 
     return true;

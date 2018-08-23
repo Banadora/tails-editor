@@ -22,7 +22,7 @@ public:
 
     void mousePressEvent(QMouseEvent *e);
 
-private slots:
+public slots:
 
     void on_ImagesList_currentTextChanged(const QString &arg1);
 

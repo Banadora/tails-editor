@@ -7,11 +7,11 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    xEventFilter *filter = new xEventFilter(&a);
-    a.installEventFilter(filter);
-
     xMainWindow w;
     w.show();
+
+    xEventFilter *filter = new xEventFilter(&a, &w);
+    a.installEventFilter(filter);
 
     return a.exec();
 }
