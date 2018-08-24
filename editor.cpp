@@ -33,9 +33,9 @@ void xEditor::fillMap(QString blockName, bool isObs) {
     //store selection pos to restore it after filling
     QPointF lastSelectionPos = selection->pos();
     //fill map
-    for (int x = 0; x < 12; x++) {
-        for (int y = 0; y < 12; y++) {
-            setSelectPos(x*32, y*32);
+    for (int x = 0; x < nbBlocksX; x++) {
+        for (int y = 0; y < nbBlocksY; y++) {
+            setSelectPos(x*PixelsX, y*PixelsY);
             placeBlock(blockName, isObs);
         }
     }
@@ -44,9 +44,9 @@ void xEditor::fillMap(QString blockName, bool isObs) {
 }
 
 void xEditor::setSelectPos(int nX, int nY) {
-    selection->setPos(nX/32*32, nY/32*32);
-    qDebug() << nX/32;
-    qDebug() << nY/32;
+    selection->setPos(nX/PixelsX*PixelsX, nY/PixelsY*PixelsY);
+    qDebug() << nX/PixelsX;
+    qDebug() << nY/PixelsY;
 }
 
 void xEditor::placeBlock(QString name, bool isObs) {

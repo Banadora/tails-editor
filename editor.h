@@ -10,6 +10,12 @@
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
 
+#define nbBlocksX 12
+#define nbBlocksY 12
+#define PixelsX 32      //blocks width in pixels
+#define PixelsY 32      //blocks height in pixels
+//#define PixelsMove 8   //move distance in pixels
+
 class xEditor: public QGraphicsView {
 
     Q_OBJECT

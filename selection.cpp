@@ -14,19 +14,19 @@ xSelection::xSelection()
 void xSelection::move(QString direction) {
 
     if (direction == "north") {
-        if (y()-32 >= 0) { setPos(x(), y()-32); }
+        if (y()-PixelsY >= 0) { setPos(x(), y()-PixelsY); }
     }
 
     else if (direction == "south") {
-        if (y()+32 < 384) { setPos(x(), y()+32); }
+        if (y()+PixelsY < nbBlocksY*PixelsY) { setPos(x(), y()+PixelsY); }
     }
 
     else if (direction == "west") {
-        if (x()-32 >= 0) { setPos(x()-32, y()); }
+        if (x()-PixelsX >= 0) { setPos(x()-PixelsX, y()); }
     }
 
     else if (direction == "east") {
-        if (x()+32 < 384) { setPos(x()+32, y()); }
+        if (x()+PixelsX < nbBlocksX*PixelsX) { setPos(x()+PixelsX, y()); }
     }
 
 }

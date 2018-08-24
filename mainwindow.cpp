@@ -39,7 +39,7 @@ void xMainWindow::getImgFiles() {
 }
 
 void xMainWindow::mousePressEvent(QMouseEvent *e) {
-    if (    (e->pos().x() >= 0)  &&  (e->pos().x() <= 384)  &&  (e->pos().y() >= 0)  &&  (e->pos().y() <= 384)    ) {
+    if (    (e->pos().x() >= 0)  &&  (e->pos().x() <= nbBlocksX*PixelsX)  &&  (e->pos().y() >= 0)  &&  (e->pos().y() <= nbBlocksY*PixelsY)    ) {
         qDebug() << "~~~~ New click ~~~~";
         clickedPt = e->pos();
         qDebug() << clickedPt;
