@@ -25,8 +25,11 @@ public:
 public slots:
 
     void on_ImagesList_currentTextChanged(const QString &arg1);
+    void on_placeBtn_clicked();
+    void on_fillBtn_clicked();
+    void on_clearBtn_clicked();
 
-    void on_placeBlock_clicked();
+private slots:
 
 private:
     Ui::xMainWindow *ui;

@@ -39,7 +39,7 @@ bool xEventFilter::eventFilter(QObject *obj, QEvent *event)
         case Qt::Key_D:         { editor->selection->move("east"); break; }
         case Qt::Key_Right:     { editor->selection->move("east"); break; }
 
-        case Qt::Key_Space:     { w->on_placeBlock_clicked(); break; }
+        case Qt::Key_Space:     { w->on_placeBtn_clicked(); break; }
 
     }
 

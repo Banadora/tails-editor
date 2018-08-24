@@ -30,12 +30,17 @@ xEditor::xEditor(int viewWidth, int viewHeight): QGraphicsView () {
 }
 
 void xEditor::fillMap(QString blockName, bool isObs) {
+    //store selection pos to restore it after filling
+    QPointF lastSelectionPos = selection->pos();
+    //fill map
     for (int x = 0; x < 12; x++) {
         for (int y = 0; y < 12; y++) {
             setSelectPos(x*32, y*32);
             placeBlock(blockName, isObs);
         }
     }
+    //restore selection pos
+    selection->setPos(lastSelectionPos);
 }
 
 void xEditor::setSelectPos(int nX, int nY) {

@@ -51,6 +51,14 @@ void xMainWindow::on_ImagesList_currentTextChanged(const QString &arg1) {
     ui->blockIcon->setIcon(QIcon(":/img/" + arg1));
 }
 
-void xMainWindow::on_placeBlock_clicked() {    
+void xMainWindow::on_placeBtn_clicked() {
     editor->placeBlock(ui->ImagesList->currentText(), ui->isObstacleBox->checkState());
+}
+
+void xMainWindow::on_fillBtn_clicked() {
+    editor->fillMap(ui->ImagesList->currentText(), ui->isObstacleBox->checkState());
+}
+
+void xMainWindow::on_clearBtn_clicked() {
+    editor->fillMap("blank", true);
 }
