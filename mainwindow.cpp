@@ -52,5 +52,5 @@ void xMainWindow::on_ImagesList_currentTextChanged(const QString &arg1) {
 }
 
 void xMainWindow::on_placeBlock_clicked() {    
-    editor->placeBlock(ui->ImagesList->currentText(), ui->isObstacleBox);
+    editor->placeBlock(ui->ImagesList->currentText(), ui->isObstacleBox->checkState());
 }
