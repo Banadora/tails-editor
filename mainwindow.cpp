@@ -55,6 +55,10 @@ void xMainWindow::on_placeBtn_clicked() {
     editor->placeBlock(ui->ImagesList->currentText(), ui->isObstacleBox->checkState());
 }
 
+void xMainWindow::on_deleteBtn_clicked() {
+    editor->placeBlock("blank", true);
+}
+
 void xMainWindow::on_fillBtn_clicked() {
     editor->fillMap(ui->ImagesList->currentText(), ui->isObstacleBox->checkState());
 }
@@ -62,3 +66,4 @@ void xMainWindow::on_fillBtn_clicked() {
 void xMainWindow::on_clearBtn_clicked() {
     editor->fillMap("blank", true);
 }
+
