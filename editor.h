@@ -29,7 +29,7 @@ public:
     void setSelectPos(int nX, int nY);
     void placeBlock(QString name, bool isObs);
 
-    void saveMap();
+    void saveMap(QString nName);
 
     QGraphicsScene *scene;
     xSelection *selection;

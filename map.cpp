@@ -16,11 +16,11 @@ void xMap::setBlock(xBlock &block) {
     blockArray << blockObj;
 }
 
-void xMap::saveJson() {
+void xMap::saveJson(QString nName) {
     rootObj.insert("blocks", blockArray);
     doc.setObject(rootObj);
 
-    QFile file("jtest.json");
+    QFile file(nName + ".json");
     if ( file.open(QIODevice::NewOnly) ) {
         qDebug() << "~~~~ Writing to file ~~~~";
         file.write(doc.toJson());

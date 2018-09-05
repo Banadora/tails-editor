@@ -22,19 +22,20 @@ public:
 
     void mousePressEvent(QMouseEvent *e);
 
+    Ui::xMainWindow *ui;
+
 public slots:
     void on_ImagesList_currentTextChanged(const QString &arg1);
     void on_placeBtn_clicked();
     void on_deleteBtn_clicked();
     void on_fillBtn_clicked();
     void on_clearBtn_clicked();
+    void on_saveBtn_clicked();
 
 private slots:
 
-    void on_saveBtn_clicked();
-
 private:
-    Ui::xMainWindow *ui;
+    //Ui::xMainWindow *ui;
     QPoint clickedPt;
 };
 

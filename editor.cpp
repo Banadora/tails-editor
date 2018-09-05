@@ -70,7 +70,7 @@ void xEditor::placeBlock(QString name, bool isObs) {
     qDebug() << blockID;
 }
 
-void xEditor::saveMap() {
+void xEditor::saveMap(QString nName) {
     xMap map;
     xBlock *testblock = new xBlock();
 
@@ -82,7 +82,7 @@ void xEditor::saveMap() {
         }
     }
 
-    map.saveJson();
+    map.saveJson(nName);
 
     testblock = nullptr;
     delete testblock;

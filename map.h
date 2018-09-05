@@ -24,7 +24,7 @@ public:
     xMap();
 
     void setBlock(xBlock &block);
-    void saveJson();
+    void saveJson(QString nName);
 };
 
 #endif // MAP_H

@@ -45,6 +45,8 @@ void xMainWindow::mousePressEvent(QMouseEvent *e) {
         qDebug() << clickedPt;
         editor->setSelectPos(e->pos().x(), e->pos().y());
     }
+
+    setFocus(); //free focus of other items when clicking on void spot
 }
 
 void xMainWindow::on_ImagesList_currentTextChanged(const QString &arg1) {
@@ -68,5 +70,5 @@ void xMainWindow::on_clearBtn_clicked() {
 }
 
 void xMainWindow::on_saveBtn_clicked() {
-    editor->saveMap();
+    editor->saveMap(ui->nameEdit->text());
 }
