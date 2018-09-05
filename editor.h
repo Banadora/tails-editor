@@ -3,6 +3,7 @@
 
 #include "selection.h"
 #include "block.h"
+#include "map.h"
 
 #include <QObject>
 #include <QGraphicsView>
@@ -27,6 +28,8 @@ public:
 
     void setSelectPos(int nX, int nY);
     void placeBlock(QString name, bool isObs);
+
+    void saveMap();
 
     QGraphicsScene *scene;
     xSelection *selection;

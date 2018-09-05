@@ -16,6 +16,7 @@ protected:
     bool isObstacle;
 
 public:
+    xBlock();
     xBlock(QString blockName, bool isObs);
 
     QString getName();

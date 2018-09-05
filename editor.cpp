@@ -70,3 +70,21 @@ void xEditor::placeBlock(QString name, bool isObs) {
     qDebug() << blockID;
 }
 
+void xEditor::saveMap() {
+    xMap map;
+    xBlock *testblock = new xBlock();
+
+    QList<QGraphicsItem *> sceneItems = scene->items();
+    for (int i = 0, n = sceneItems.size(); i < n; ++i) {
+        if (typeid(*(sceneItems[i])) == typeid(xBlock)) {
+            testblock = qgraphicsitem_cast<xBlock *>(sceneItems[i]);
+            map.setBlock(*testblock);
+        }
+    }
+
+    map.saveJson();
+
+    testblock = nullptr;
+    delete testblock;
+}
+

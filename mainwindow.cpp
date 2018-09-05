@@ -67,3 +67,6 @@ void xMainWindow::on_clearBtn_clicked() {
     editor->fillMap("blank", true);
 }
 
+void xMainWindow::on_saveBtn_clicked() {
+    editor->saveMap();
+}

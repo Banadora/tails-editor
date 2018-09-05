@@ -5,6 +5,9 @@
 extern xEditor *editor;
 
 ////////// init
+xBlock::xBlock()
+{ }
+
 xBlock::xBlock(QString blockName, bool isObs) :
     name(blockName),
     isObstacle(isObs)

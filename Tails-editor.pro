@@ -28,14 +28,16 @@ SOURCES += \
     editor.cpp \
     block.cpp \
     selection.cpp \
-    eventfilter.cpp
+    eventfilter.cpp \
+    map.cpp
 
 HEADERS += \
         mainwindow.h \
     editor.h \
     block.h \
     selection.h \
-    eventfilter.h
+    eventfilter.h \
+    map.h
 
 FORMS += \
         mainwindow.ui
