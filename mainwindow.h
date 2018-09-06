@@ -34,6 +34,8 @@ public slots:
 
 private slots:
 
+    void on_loadBtn_clicked();
+
 private:
     //Ui::xMainWindow *ui;
     QPoint clickedPt;

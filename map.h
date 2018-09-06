@@ -18,13 +18,14 @@ class xMap {
     QJsonDocument doc;
     QJsonObject rootObj;
     QJsonObject blockObj;
-    QJsonArray blockArray;
+    QJsonArray blocksArray;
 
 public:
     xMap();
 
     void setBlock(xBlock &block);
     void saveJson(QString nName);
+    void loadJson(QString nName);
 };
 
 #endif // MAP_H

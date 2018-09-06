@@ -88,3 +88,9 @@ void xEditor::saveMap(QString nName) {
     delete testblock;
 }
 
+void xEditor::loadMap(QString nName) {
+    xMap map;
+
+    map.loadJson(nName);
+}
+

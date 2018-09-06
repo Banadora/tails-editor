@@ -30,6 +30,7 @@ public:
     void placeBlock(QString name, bool isObs);
 
     void saveMap(QString nName);
+    void loadMap(QString nName);
 
     QGraphicsScene *scene;
     xSelection *selection;

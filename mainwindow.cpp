@@ -72,3 +72,7 @@ void xMainWindow::on_clearBtn_clicked() {
 void xMainWindow::on_saveBtn_clicked() {
     editor->saveMap(ui->nameEdit->text());
 }
+
+void xMainWindow::on_loadBtn_clicked() {
+    editor->loadMap(ui->nameEdit->text());
+}
