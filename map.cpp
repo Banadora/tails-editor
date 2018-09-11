@@ -9,6 +9,8 @@ extern xEditor *editor;
 xMap::xMap()
 { }
 
+void xMap::setName(QString nName) { name = nName; }
+
 void xMap::setBlock(xBlock &block) {
 
     blockObj["name"]=block.getName();
@@ -21,6 +23,11 @@ void xMap::setBlock(xBlock &block) {
 
 void xMap::saveJson(QString nName) {
     rootObj.insert("blocks", blocksArray);
+    rootObj.insert("name", nName);
+    rootObj.insert("mapNorth", "none");
+    rootObj.insert("mapEast", "none");
+    rootObj.insert("mapSouth", "none");
+    rootObj.insert("mapWest", "none");
     doc.setObject(rootObj);
 
     QFile file(nName + ".json");

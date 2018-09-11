@@ -23,6 +23,7 @@ class xMap {
 public:
     xMap();
 
+    void setName(QString nName);
     void setBlock(xBlock &block);
     void saveJson(QString nName);
     void loadJson(QString nName);
