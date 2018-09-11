@@ -31,7 +31,7 @@ void xMainWindow::getImgFiles() {
     QDir directory(":/img");
     QStringList images = directory.entryList(QStringList() << "*.png" << "*.PNG",QDir::Files);
     foreach (QString filename, images) {
-        if (filename != "background.png" && filename != "selection.png") {
+        if (filename != "background.png" && filename != "selection.png" && filename != "redfilter.png") {
             ui->ImagesList->addItem(filename);
         }
     }
