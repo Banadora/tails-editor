@@ -35,6 +35,7 @@ public:
     QGraphicsScene *scene;
     xSelection *selection;
     xBlock *block;
+    xBlock *redfilter;
 };
 
 #endif // EDITOR_H

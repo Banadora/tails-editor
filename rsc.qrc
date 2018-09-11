@@ -12,5 +12,6 @@
         <file>img/mud4.png</file>
         <file>img/mud5.png</file>
         <file>img/mud6.png</file>
+        <file>img/redfilter.png</file>
     </qresource>
 </RCC>

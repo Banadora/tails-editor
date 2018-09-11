@@ -26,7 +26,7 @@ xEditor::xEditor(int viewWidth, int viewHeight): QGraphicsView () {
     scene->addItem(selection);
 
     //fill map editor with blank blocks to have blocks everywhere at everytime
-    fillMap("blank", true);
+    fillMap("blank", false);
 }
 
 void xEditor::fillMap(QString blockName, bool isObs) {
@@ -64,10 +64,12 @@ void xEditor::placeBlock(QString name, bool isObs) {
         }
     }
 
-    qDebug() << "~~~~ New block placed ~~~~";
-    QString blockID;
-    blockID = "name:" + block->getName() + ", isObs:" + QString::number(block->getIsObstacle());
-    qDebug() << blockID;
+    //add redfilter if xblock is an obstacle
+    if (block->getIsObstacle()) {
+        redfilter = new xBlock("redfilter", false);
+        redfilter->setPos(selection->pos().x(), selection->pos().y());
+        scene->addItem(redfilter);
+    }
 }
 
 void xEditor::saveMap(QString nName) {
