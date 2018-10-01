@@ -72,6 +72,10 @@ void xEditor::placeBlock(QString name, bool isObs) {
     }
 }
 
+void xEditor::placeEnemy(QString name) {
+
+}
+
 void xEditor::saveMap(QString nName) {
     xMap map;
     xBlock *testblock = new xBlock();

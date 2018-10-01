@@ -25,7 +25,7 @@ public:
     Ui::xMainWindow *ui;
 
 public slots:
-    void on_ImagesList_currentTextChanged(const QString &arg1);
+    void on_ImagesList_blocks_currentTextChanged(const QString &arg1);
     void on_placeBtn_clicked();
     void on_deleteBtn_clicked();
     void on_fillBtn_clicked();
@@ -36,9 +36,12 @@ private slots:
 
     void on_loadBtn_clicked();
 
+    void on_ImagesList_enemies_currentTextChanged(const QString &arg1);
+
 private:
     //Ui::xMainWindow *ui;
     QPoint clickedPt;
+    int focusedBox;
 };
 
 #endif // MAINWINDOW_H

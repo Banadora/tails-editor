@@ -23,5 +23,7 @@
         <file>img/water7.png</file>
         <file>img/water8.png</file>
         <file>img/water9.png</file>
+        <file>img/enemies/squirrel.png</file>
+        <file>img/enemies/hero.png</file>
     </qresource>
 </RCC>
