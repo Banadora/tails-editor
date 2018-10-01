@@ -74,12 +74,15 @@ void xEditor::placeBlock(QString name, bool isObs) {
     }
 }
 
-void xEditor::placeEnemy(QString name) {
+void xEditor::placeEnemy(QString name, int hp, int dmg) {
     //place new enemy
     enemy = new xEnemyView(nullptr, name);
     enemy->setPos(selection->pos().x(), selection->pos().y());
     enemy->setZValue(3);
+    enemy->setHP(hp);
+    enemy->setDmg(dmg);
     scene->addItem(enemy);
+    qDebug() << enemy->getHP() << enemy->getDmg();
 
     //remove old enemy
     QList<QGraphicsItem *> colliding_items = enemy->collidingItems();
@@ -89,24 +92,35 @@ void xEditor::placeEnemy(QString name) {
             delete colliding_items[i];
         }
     }
+    //if deleting enemy, delete blank enemy too
+    if (name == "blank") { scene->removeItem(enemy); delete enemy; }
 }
 
 void xEditor::saveMap(QString nName) {
     xMap map;
+
+    //add blocks and enemies to map before saving
     xBlock *testblock = new xBlock();
+    xEnemyView *testenemy = new xEnemyView(nullptr, "blank");
 
     QList<QGraphicsItem *> sceneItems = scene->items();
     for (int i = 0, n = sceneItems.size(); i < n; ++i) {
+        //search blocks
         if (typeid(*(sceneItems[i])) == typeid(xBlock)) {
             testblock = qgraphicsitem_cast<xBlock *>(sceneItems[i]);
             map.setBlock(*testblock);
+        }
+        //search enemies
+        if (typeid(*(sceneItems[i])) == typeid(xEnemyView)) {
+            testenemy = qgraphicsitem_cast<xEnemyView *>(sceneItems[i]);
+            map.setEnemy(*testenemy);
         }
     }
 
     map.saveJson(nName);
 
-    testblock = nullptr;
-    delete testblock;
+    testblock = nullptr; delete testblock;
+    testenemy = nullptr; delete testenemy;
 }
 
 void xEditor::loadMap(QString nName) {

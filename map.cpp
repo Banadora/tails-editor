@@ -13,16 +13,28 @@ void xMap::setName(QString nName) { name = nName; }
 
 void xMap::setBlock(xBlock &block) {
 
-    blockObj["name"]=block.getName();
-    blockObj["xpos"]=block.pos().x();
-    blockObj["ypos"]=block.pos().y();
-    blockObj["obstacle"]=block.getIsObstacle();
+    blockObj["name"] = block.getName();
+    blockObj["xpos"] = block.pos().x();
+    blockObj["ypos"] = block.pos().y();
+    blockObj["obstacle"] = block.getIsObstacle();
 
     blocksArray << blockObj;
 }
 
+void xMap::setEnemy(xEnemyView &enemy)
+{
+    enemyObj["name"] = enemy.getViewName();
+    enemyObj["xpos"] = enemy.pos().x();
+    enemyObj["ypos"] = enemy.pos().y();
+    enemyObj["hp"] = enemy.getHP();
+    enemyObj["dmg"] = enemy.getDmg();
+
+    enemyArray << enemyObj;
+}
+
 void xMap::saveJson(QString nName) {
     rootObj.insert("blocks", blocksArray);
+    rootObj.insert("enemies", enemyArray);
     rootObj.insert("name", nName);
     rootObj.insert("mapNorth", "none");
     rootObj.insert("mapEast", "none");

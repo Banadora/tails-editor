@@ -30,7 +30,7 @@ public:
     void setSelectPos(int nX, int nY);
     void placeBlock(QString name, bool isObs);
 
-    void placeEnemy(QString name);
+    void placeEnemy(QString name, int hp, int dmg);
 
     void saveMap(QString nName);
     void loadMap(QString nName);

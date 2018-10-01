@@ -63,12 +63,12 @@ void xMainWindow::on_ImagesList_blocks_currentTextChanged(const QString &arg1) {
 
 void xMainWindow::on_placeBtn_clicked() {
     if (focusedBox==1) { editor->placeBlock(ui->ImagesList_blocks->currentText(), ui->isObstacleBox->checkState()); }
-    else if (focusedBox==2) { editor->placeEnemy(ui->ImagesList_enemies->currentText()); }
+    else if (focusedBox==2) { editor->placeEnemy(ui->ImagesList_enemies->currentText(), ui->enemyHP->value(), ui->enemyDmg->value()); }
 }
 
 void xMainWindow::on_deleteBtn_clicked() {
     if (focusedBox==1) { editor->placeBlock("blank", true); }
-    else if (focusedBox==2) { editor->placeEnemy("blank"); }
+    else if (focusedBox==2) { editor->placeEnemy("blank", 0, 0); }
 }
 
 void xMainWindow::on_fillBtn_clicked() {

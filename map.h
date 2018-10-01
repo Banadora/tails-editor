@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include "block.h"
+#include "enemyview.h"
 
 #include <QString>
 #include <QFile>
@@ -13,18 +14,23 @@ class xMap {
 
     QString name;
     int level;
-    //QList<xBlock> blocksList;
 
     QJsonDocument doc;
     QJsonObject rootObj;
     QJsonObject blockObj;
     QJsonArray blocksArray;
 
+    QJsonObject enemyObj;
+    QJsonArray enemyArray;
+
 public:
     xMap();
 
     void setName(QString nName);
+
     void setBlock(xBlock &block);
+    void setEnemy(xEnemyView &enemy);
+
     void saveJson(QString nName);
     void loadJson(QString nName);
 };
