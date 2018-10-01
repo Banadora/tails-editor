@@ -32,14 +32,14 @@ void xMap::setEnemy(xEnemyView &enemy)
     enemyArray << enemyObj;
 }
 
-void xMap::saveJson(QString nName) {
+void xMap::saveJson(QString nName, QString north, QString east, QString south, QString west) {
     rootObj.insert("blocks", blocksArray);
     rootObj.insert("enemies", enemyArray);
     rootObj.insert("name", nName);
-    rootObj.insert("mapNorth", "none");
-    rootObj.insert("mapEast", "none");
-    rootObj.insert("mapSouth", "none");
-    rootObj.insert("mapWest", "none");
+    rootObj.insert("mapNorth", north);
+    rootObj.insert("mapEast", east);
+    rootObj.insert("mapSouth", south);
+    rootObj.insert("mapWest", west);
     doc.setObject(rootObj);
 
     QFile file(nName + ".json");
@@ -100,5 +100,14 @@ void xMap::loadJson(QString nName) {
 
 
     name = rootMap["name"].toString();
+    mapNorth = rootMap["mapNorth"].toString();
+    mapEast = rootMap["mapEast"].toString();
+    mapSouth = rootMap["mapSouth"].toString();
+    mapWest = rootMap["mapWest"].toString();
     qDebug() << "~~~~ Map loaded ~~~~" << '\n' << name;
 }
+
+QString xMap::getMapNorth() { return mapNorth; }
+QString xMap::getMapEast() { return mapEast; }
+QString xMap::getMapSouth() { return mapSouth; }
+QString xMap::getMapWest() { return mapWest; }

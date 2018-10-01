@@ -80,11 +80,15 @@ void xMainWindow::on_clearBtn_clicked() {
 }
 
 void xMainWindow::on_saveBtn_clicked() {
-    editor->saveMap(ui->nameEdit->text());
+    editor->saveMap(ui->nameEdit->text(), ui->nameNorth->text(), ui->nameEast->text(), ui->nameSouth->text(), ui->nameWest->text());
 }
 
 void xMainWindow::on_loadBtn_clicked() {
     editor->loadMap(ui->nameEdit->text());
+    ui->nameNorth->setText(editor->map->getMapNorth());
+    ui->nameEast->setText(editor->map->getMapEast());
+    ui->nameSouth->setText(editor->map->getMapSouth());
+    ui->nameWest->setText(editor->map->getMapWest());
 }
 
 void xMainWindow::on_ImagesList_enemies_currentTextChanged(const QString &arg1)

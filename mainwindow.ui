@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>636</width>
-    <height>476</height>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -86,8 +86,8 @@
    <widget class="QPushButton" name="loadBtn">
     <property name="geometry">
      <rect>
-      <x>122</x>
-      <y>441</y>
+      <x>270</x>
+      <y>449</y>
       <width>91</width>
       <height>23</height>
      </rect>
@@ -99,8 +99,8 @@
    <widget class="QPushButton" name="saveBtn">
     <property name="geometry">
      <rect>
-      <x>8</x>
-      <y>441</y>
+      <x>270</x>
+      <y>409</y>
       <width>91</width>
       <height>23</height>
      </rect>
@@ -112,7 +112,7 @@
    <widget class="QLineEdit" name="nameEdit">
     <property name="geometry">
      <rect>
-      <x>8</x>
+      <x>38</x>
       <y>410</y>
       <width>205</width>
       <height>21</height>
@@ -125,7 +125,7 @@
    <widget class="QLabel" name="lblNameEdit">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>40</x>
       <y>390</y>
       <width>61</width>
       <height>16</height>
@@ -296,6 +296,110 @@
       <string>Dmg</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLineEdit" name="nameNorth">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>450</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nameEast">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>480</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nameSouth">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>510</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nameWest">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>540</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nameNorthLbl">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>452</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>North</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nameEastLbl">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>482</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>East</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nameSouthLbl">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>512</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>South</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nameWestLbl">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>542</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>West</string>
+    </property>
    </widget>
   </widget>
  </widget>

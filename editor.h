@@ -32,11 +32,13 @@ public:
 
     void placeEnemy(QString name, int hp, int dmg);
 
-    void saveMap(QString nName);
+    void saveMap(QString nName, QString north, QString east, QString south, QString west);
     void loadMap(QString nName);
 
     QGraphicsScene *scene;
     xSelection *selection;
+    xMap *map;
+
     xBlock *block;
     xBlock *redfilter;
     xEnemyView *enemy;

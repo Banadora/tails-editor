@@ -26,6 +26,7 @@ xEditor::xEditor(int viewWidth, int viewHeight): QGraphicsView () {
     scene->addItem(selection);
 
     //fill map editor with blank blocks to have blocks everywhere at everytime
+    map = new xMap();
     fillMap("blank", false);
 }
 
@@ -68,6 +69,7 @@ void xEditor::placeBlock(QString name, bool isObs) {
     //add redfilter if xblock is an obstacle
     if (block->getIsObstacle()) {
         redfilter = new xBlock("redfilter", false);
+        redfilter->setPixmap(QPixmap(":/img/redfilter.png"));
         redfilter->setPos(selection->pos().x(), selection->pos().y());
         redfilter->setZValue(2);
         scene->addItem(redfilter);
@@ -96,8 +98,8 @@ void xEditor::placeEnemy(QString name, int hp, int dmg) {
     if (name == "blank") { scene->removeItem(enemy); delete enemy; }
 }
 
-void xEditor::saveMap(QString nName) {
-    xMap map;
+void xEditor::saveMap(QString nName, QString north, QString east, QString south, QString west) {
+    //map = new xMap();
 
     //add blocks and enemies to map before saving
     xBlock *testblock = new xBlock();
@@ -108,24 +110,36 @@ void xEditor::saveMap(QString nName) {
         //search blocks
         if (typeid(*(sceneItems[i])) == typeid(xBlock)) {
             testblock = qgraphicsitem_cast<xBlock *>(sceneItems[i]);
-            map.setBlock(*testblock);
+            map->setBlock(*testblock);
         }
         //search enemies
         if (typeid(*(sceneItems[i])) == typeid(xEnemyView)) {
             testenemy = qgraphicsitem_cast<xEnemyView *>(sceneItems[i]);
-            map.setEnemy(*testenemy);
+            map->setEnemy(*testenemy);
         }
     }
 
-    map.saveJson(nName);
+    map->saveJson(nName, north, east, south, west);
 
     testblock = nullptr; delete testblock;
     testenemy = nullptr; delete testenemy;
 }
 
 void xEditor::loadMap(QString nName) {
-    xMap map;
+    //map = new xMap();
 
-    map.loadJson(nName);
+    xEnemyView *testenemy = new xEnemyView(nullptr, "blank");
+
+    QList<QGraphicsItem *> sceneItems = scene->items();
+    for (int i = 0, n = sceneItems.size(); i < n; ++i) {
+        //search enemies
+        if (typeid(*(sceneItems[i])) == typeid(xEnemyView)) {
+            testenemy = qgraphicsitem_cast<xEnemyView *>(sceneItems[i]);
+            scene->removeItem(testenemy);
+            delete testenemy;
+        }
+    }
+
+    map->loadJson(nName);
 }
 

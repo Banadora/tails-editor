@@ -23,7 +23,9 @@ bool xEventFilter::eventFilter(QObject *obj, QEvent *event)
     xMainWindow *mw = dynamic_cast<xMainWindow*>(apps[0]);
     w = mw;*/
 
-    if (w->ui->nameEdit->hasFocus()) { return false; } //don't handle key event if editing text
+    if (    w->ui->nameEdit->hasFocus() || w->ui->nameNorth->hasFocus() ||
+            w->ui->nameEast->hasFocus() || w->ui->nameSouth->hasFocus() || w->ui->nameWest->hasFocus())
+    { return false; } //don't handle key event if editing text
 
     if (event->type() != QEvent::KeyPress)
         return QObject::eventFilter(obj, event);
