@@ -17,6 +17,7 @@ class xMap {
 
     QJsonDocument doc;
     QJsonObject rootObj;
+
     QJsonObject blockObj;
     QJsonArray blocksArray;
 

@@ -68,10 +68,10 @@ void xMap::loadJson(QString nName) {
 
     //rootMap = root json object
     QVariantMap rootMap = rootObj.toVariantMap();
+
+    // BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS BLOCKS
     //blocksArray is an array of objects and is located directly in root, it's erased before use
-    while(blocksArray.count()) {
-         blocksArray.pop_back();
-     }
+    while(blocksArray.count()) { blocksArray.pop_back(); }
     blocksArray = rootObj["blocks"].toArray();
 
     //jBlock is an object inside the blockArray
@@ -83,6 +83,22 @@ void xMap::loadJson(QString nName) {
         editor->selection->setPos(jBlockMap["xpos"].toInt(), jBlockMap["ypos"].toInt());
         editor->placeBlock(jBlockMap["name"].toString(), jBlockMap["obstacle"].toBool());
     }
+
+    // ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES ENEMIES
+    //enemyArray is an array of objects and is located directly in root, it's erased before use
+    while(enemyArray.count()) { enemyArray.pop_back(); }
+    enemyArray = rootObj["enemies"].toArray();
+
+    QJsonObject jEnemy;
+    QVariantMap jEnemyMap;
+    for (int i = 0, n = enemyArray.size(); i < n; i++) {
+        jEnemy = enemyArray[i].toObject();
+        jEnemyMap = jEnemy.toVariantMap();
+        editor->selection->setPos(jEnemyMap["xpos"].toInt(), jEnemyMap["ypos"].toInt());
+        editor->placeEnemy(jEnemyMap["name"].toString(), jEnemyMap["hp"].toInt(), jEnemyMap["dmg"].toInt());
+    }
+
+
     name = rootMap["name"].toString();
     qDebug() << "~~~~ Map loaded ~~~~" << '\n' << name;
 }
