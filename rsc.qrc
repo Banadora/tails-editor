@@ -2,28 +2,29 @@
     <qresource prefix="/">
         <file>img/background.png</file>
         <file>img/selection.png</file>
-        <file>img/blank.png</file>
-        <file>img/grass0.png</file>
-        <file>img/grass1.png</file>
-        <file>img/mud0.png</file>
-        <file>img/mud1.png</file>
-        <file>img/mud2.png</file>
-        <file>img/mud3.png</file>
-        <file>img/mud4.png</file>
-        <file>img/mud5.png</file>
-        <file>img/mud6.png</file>
         <file>img/redfilter.png</file>
-        <file>img/water0.png</file>
-        <file>img/water1.png</file>
-        <file>img/water2.png</file>
-        <file>img/water3.png</file>
-        <file>img/water4.png</file>
-        <file>img/water5.png</file>
-        <file>img/water6.png</file>
-        <file>img/water7.png</file>
-        <file>img/water8.png</file>
-        <file>img/water9.png</file>
         <file>img/enemies/squirrel.png</file>
         <file>img/enemies/hero.png</file>
+        <file>img/enemies/blank.png</file>
+        <file>img/blocks/blank.png</file>
+        <file>img/blocks/grass0.png</file>
+        <file>img/blocks/grass1.png</file>
+        <file>img/blocks/mud0.png</file>
+        <file>img/blocks/mud1.png</file>
+        <file>img/blocks/mud2.png</file>
+        <file>img/blocks/mud3.png</file>
+        <file>img/blocks/mud4.png</file>
+        <file>img/blocks/mud5.png</file>
+        <file>img/blocks/mud6.png</file>
+        <file>img/blocks/water0.png</file>
+        <file>img/blocks/water1.png</file>
+        <file>img/blocks/water2.png</file>
+        <file>img/blocks/water3.png</file>
+        <file>img/blocks/water4.png</file>
+        <file>img/blocks/water5.png</file>
+        <file>img/blocks/water6.png</file>
+        <file>img/blocks/water7.png</file>
+        <file>img/blocks/water8.png</file>
+        <file>img/blocks/water9.png</file>
     </qresource>
 </RCC>

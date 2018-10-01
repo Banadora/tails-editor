@@ -29,7 +29,8 @@ SOURCES += \
     block.cpp \
     selection.cpp \
     eventfilter.cpp \
-    map.cpp
+    map.cpp \
+    enemyview.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -37,7 +38,8 @@ HEADERS += \
     block.h \
     selection.h \
     eventfilter.h \
-    map.h
+    map.h \
+    enemyview.h
 
 FORMS += \
         mainwindow.ui

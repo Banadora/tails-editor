@@ -12,7 +12,7 @@ xBlock::xBlock(QString blockName, bool isObs) :
     name(blockName),
     isObstacle(isObs)
 {
-    setPixmap(QPixmap(":/img/" + name));
+    setPixmap(QPixmap(":/img/blocks/" + name));
 }
 
 QString xBlock::getName() { return name; }

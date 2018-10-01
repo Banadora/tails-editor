@@ -3,6 +3,7 @@
 
 #include "selection.h"
 #include "block.h"
+#include "enemyview.h"
 #include "map.h"
 
 #include <QObject>
@@ -38,6 +39,7 @@ public:
     xSelection *selection;
     xBlock *block;
     xBlock *redfilter;
+    xEnemyView *enemy;
 };
 
 #endif // EDITOR_H

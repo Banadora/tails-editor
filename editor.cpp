@@ -53,6 +53,7 @@ void xEditor::placeBlock(QString name, bool isObs) {
     //place new block
     block = new xBlock(name, isObs);
     block->setPos(selection->pos().x(), selection->pos().y());
+    block->setZValue(1);
     scene->addItem(block);
 
     //remove old block
@@ -68,12 +69,26 @@ void xEditor::placeBlock(QString name, bool isObs) {
     if (block->getIsObstacle()) {
         redfilter = new xBlock("redfilter", false);
         redfilter->setPos(selection->pos().x(), selection->pos().y());
+        redfilter->setZValue(2);
         scene->addItem(redfilter);
     }
 }
 
 void xEditor::placeEnemy(QString name) {
+    //place new enemy
+    enemy = new xEnemyView(nullptr, name);
+    enemy->setPos(selection->pos().x(), selection->pos().y());
+    enemy->setZValue(3);
+    scene->addItem(enemy);
 
+    //remove old enemy
+    QList<QGraphicsItem *> colliding_items = enemy->collidingItems();
+    for (int i = 0, n = colliding_items.size(); i < n; ++i) {
+        if (typeid(*(colliding_items[i])) == typeid(xEnemyView)) {
+            scene->removeItem(colliding_items[i]);
+            delete colliding_items[i];
+        }
+    }
 }
 
 void xEditor::saveMap(QString nName) {

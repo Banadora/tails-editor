@@ -29,14 +29,12 @@ xMainWindow::~xMainWindow() {
 
 void xMainWindow::getImgFiles() {
     //get all blocks images
-    QDir directory(":/img");
+    QDir directory(":/img/blocks");
     QStringList images = directory.entryList(QStringList() << "*.png" << "*.PNG",QDir::Files);
     foreach (QString filename, images) {
-        if (filename != "background.png" && filename != "selection.png" && filename != "redfilter.png") {
             ui->ImagesList_blocks->addItem(filename);
-        }
     }
-    ui->blockIcon->setIcon(QIcon(":/img/blank.png"));
+    ui->blockIcon->setIcon(QIcon(":/img/blocks/blank.png"));
 
     //get all enemies images
     directory.setPath(":/img/enemies");
@@ -44,7 +42,7 @@ void xMainWindow::getImgFiles() {
     foreach (QString filename, images) {
             ui->ImagesList_enemies->addItem(filename);
     }
-    ui->enemyIcon->setIcon(QIcon(":/img/blank.png"));
+    ui->enemyIcon->setIcon(QIcon(":/img/enemies/blank.png"));
 }
 
 void xMainWindow::mousePressEvent(QMouseEvent *e) {
@@ -60,7 +58,7 @@ void xMainWindow::mousePressEvent(QMouseEvent *e) {
 
 void xMainWindow::on_ImagesList_blocks_currentTextChanged(const QString &arg1) {
     focusedBox = 1;
-    ui->blockIcon->setIcon(QIcon(":/img/" + arg1));
+    ui->blockIcon->setIcon(QIcon(":/img/blocks/" + arg1));
 }
 
 void xMainWindow::on_placeBtn_clicked() {
@@ -70,6 +68,7 @@ void xMainWindow::on_placeBtn_clicked() {
 
 void xMainWindow::on_deleteBtn_clicked() {
     if (focusedBox==1) { editor->placeBlock("blank", true); }
+    else if (focusedBox==2) { editor->placeEnemy("blank"); }
 }
 
 void xMainWindow::on_fillBtn_clicked() {
