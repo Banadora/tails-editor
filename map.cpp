@@ -32,6 +32,12 @@ void xMap::setEnemy(xEnemyView &enemy)
     enemyArray << enemyObj;
 }
 
+void xMap::clearArrays()
+{
+    while(blocksArray.count()) { blocksArray.pop_back(); }
+    while(enemyArray.count()) { enemyArray.pop_back(); }
+}
+
 void xMap::saveJson(QString nName, QString north, QString east, QString south, QString west) {
     rootObj.insert("blocks", blocksArray);
     rootObj.insert("enemies", enemyArray);
@@ -49,7 +55,7 @@ void xMap::saveJson(QString nName, QString north, QString east, QString south, Q
     }
 }
 
-void xMap::loadJson(QString nName) {
+void xMap::loadJson(QString nName) {    
     //open file and convert to byteArray
     QFile file(nName + ".json");
     if(!file.open(QIODevice::ReadOnly)) { qDebug() << "Failed to open " << nName + ".json"; exit(1); }
@@ -104,6 +110,8 @@ void xMap::loadJson(QString nName) {
     mapEast = rootMap["mapEast"].toString();
     mapSouth = rootMap["mapSouth"].toString();
     mapWest = rootMap["mapWest"].toString();
+
+    clearArrays();
     qDebug() << "~~~~ Map loaded ~~~~" << '\n' << name;
 }
 

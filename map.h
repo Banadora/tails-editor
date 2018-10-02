@@ -37,6 +37,8 @@ public:
     void setBlock(xBlock &block);
     void setEnemy(xEnemyView &enemy);
 
+    void clearArrays();
+
     void saveJson(QString nName, QString north, QString east, QString south, QString west);
     void loadJson(QString nName);
 

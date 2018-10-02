@@ -101,6 +101,8 @@ void xEditor::placeEnemy(QString name, int hp, int dmg) {
 void xEditor::saveMap(QString nName, QString north, QString east, QString south, QString west) {
     //map = new xMap();
 
+    map->clearArrays();
+
     //add blocks and enemies to map before saving
     xBlock *testblock = new xBlock();
     xEnemyView *testenemy = new xEnemyView(nullptr, "blank");
@@ -110,7 +112,7 @@ void xEditor::saveMap(QString nName, QString north, QString east, QString south,
         //search blocks
         if (typeid(*(sceneItems[i])) == typeid(xBlock)) {
             testblock = qgraphicsitem_cast<xBlock *>(sceneItems[i]);
-            map->setBlock(*testblock);
+            if (testblock->getName() != "redfilter") { map->setBlock(*testblock); }
         }
         //search enemies
         if (typeid(*(sceneItems[i])) == typeid(xEnemyView)) {
