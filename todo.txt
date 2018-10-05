@@ -1,0 +1,3 @@
+~~~~~   To do list   ~~~~~
+
+:: need focus out of eventfilter when changing hp/dmg (like done with map name)
