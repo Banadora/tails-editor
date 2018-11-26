@@ -30,7 +30,8 @@ SOURCES += \
     selection.cpp \
     eventfilter.cpp \
     map.cpp \
-    enemyview.cpp
+    enemyview.cpp \
+    weapon.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -39,7 +40,8 @@ HEADERS += \
     selection.h \
     eventfilter.h \
     map.h \
-    enemyview.h
+    enemyview.h \
+    weapon.h
 
 FORMS += \
         mainwindow.ui

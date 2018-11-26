@@ -18,6 +18,8 @@
 #define PixelsY 32      //blocks height in pixels
 //#define PixelsMove 8   //move distance in pixels
 
+
+
 class xEditor: public QGraphicsView {
 
     Q_OBJECT
@@ -30,7 +32,7 @@ public:
     void setSelectPos(int nX, int nY);
     void placeBlock(QString name, bool isObs);
 
-    void placeEnemy(QString name, int hp, int dmg);
+    void placeEnemy(QString name, int hp, QString weapon);
 
     void saveMap(QString nName, QString north, QString east, QString south, QString west);
     void loadMap(QString nName);

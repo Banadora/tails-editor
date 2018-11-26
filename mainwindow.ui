@@ -237,7 +237,7 @@
       <rect>
        <x>20</x>
        <y>90</y>
-       <width>51</width>
+       <width>41</width>
        <height>22</height>
       </rect>
      </property>
@@ -267,14 +267,14 @@
     <widget class="QSpinBox" name="enemyDmg">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>180</x>
        <y>90</y>
-       <width>51</width>
+       <width>41</width>
        <height>22</height>
       </rect>
      </property>
      <property name="minimum">
-      <number>1</number>
+      <number>0</number>
      </property>
      <property name="maximum">
       <number>1000</number>
@@ -286,7 +286,7 @@
     <widget class="QLabel" name="enemyDmgLabel">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>170</x>
        <y>70</y>
        <width>21</width>
        <height>16</height>
@@ -294,6 +294,16 @@
      </property>
      <property name="text">
       <string>Dmg</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="WeaponsList_enemies">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>90</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
      </property>
     </widget>
    </widget>

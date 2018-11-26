@@ -13,7 +13,7 @@ class xEnemyView : public QObject, public QGraphicsPixmapItem {
     QObject *p; //parent object
 
     int hp;
-    int dmg;
+    QString weapon;
 
 public:
     xEnemyView();
@@ -22,13 +22,12 @@ public:
     QObject* getParent();
 
     QString getViewName();
-    void setViewName(QString nName);
 
-    void setHP(int nHP);
     int getHP();
+    void setHP(int nHP);
 
-    void setDmg(int nDmg);
-    int getDmg();
+    QString getWeapon();
+    void setWeapon(QString nWeapon);
 };
 
 #endif // ENEMYVIEW_H

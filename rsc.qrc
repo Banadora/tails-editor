@@ -26,5 +26,8 @@
         <file>img/blocks/water7.png</file>
         <file>img/blocks/water8.png</file>
         <file>img/blocks/water9.png</file>
+        <file>anim/claws.png</file>
+        <file>anim/staff.png</file>
+        <file>anim/none.png</file>
     </qresource>
 </RCC>

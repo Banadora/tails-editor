@@ -24,15 +24,9 @@ QObject* xEnemyView::getParent()
 
 QString xEnemyView::getViewName() { return name; }
 
-void xEnemyView::setViewName(QString nName)
-{
-    name = nName;
-    setPixmap(QPixmap(":/img/" + name + ".png"));
-}
-
-void xEnemyView::setHP(int nHP) { hp = nHP; }
 int xEnemyView::getHP() { return hp; }
+void xEnemyView::setHP(int nHP) { hp = nHP; }
 
-void xEnemyView::setDmg(int nDmg) { dmg= nDmg; }
-int xEnemyView::getDmg() { return dmg; }
+QString xEnemyView::getWeapon() { return weapon; }
+void xEnemyView::setWeapon(QString nWeapon) { weapon = nWeapon; }
 

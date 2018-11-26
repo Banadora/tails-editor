@@ -38,6 +38,8 @@ private slots:
 
     void on_ImagesList_enemies_currentTextChanged(const QString &arg1);
 
+    void on_WeaponsList_enemies_currentTextChanged(const QString &arg1);
+
 private:
     //Ui::xMainWindow *ui;
     QPoint clickedPt;

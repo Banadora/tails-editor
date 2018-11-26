@@ -76,15 +76,15 @@ void xEditor::placeBlock(QString name, bool isObs) {
     }
 }
 
-void xEditor::placeEnemy(QString name, int hp, int dmg) {
+void xEditor::placeEnemy(QString name, int hp, QString weapon) {
     //place new enemy
     enemy = new xEnemyView(nullptr, name);
     enemy->setPos(selection->pos().x(), selection->pos().y());
     enemy->setZValue(3);
     enemy->setHP(hp);
-    enemy->setDmg(dmg);
+    enemy->setWeapon(weapon);
     scene->addItem(enemy);
-    qDebug() << enemy->getHP() << enemy->getDmg();
+    qDebug() << enemy->getHP() << enemy->getWeapon();
 
     //remove old enemy
     QList<QGraphicsItem *> colliding_items = enemy->collidingItems();

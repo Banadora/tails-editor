@@ -27,7 +27,7 @@ void xMap::setEnemy(xEnemyView &enemy)
     enemyObj["xpos"] = enemy.pos().x();
     enemyObj["ypos"] = enemy.pos().y();
     enemyObj["hp"] = enemy.getHP();
-    enemyObj["dmg"] = enemy.getDmg();
+    enemyObj["weapon"] = enemy.getWeapon();
 
     enemyArray << enemyObj;
 }
@@ -101,7 +101,7 @@ void xMap::loadJson(QString nName) {
         jEnemy = enemyArray[i].toObject();
         jEnemyMap = jEnemy.toVariantMap();
         editor->selection->setPos(jEnemyMap["xpos"].toInt(), jEnemyMap["ypos"].toInt());
-        editor->placeEnemy(jEnemyMap["name"].toString(), jEnemyMap["hp"].toInt(), jEnemyMap["dmg"].toInt());
+        editor->placeEnemy(jEnemyMap["name"].toString(), jEnemyMap["hp"].toInt(), jEnemyMap["weapon"].toString());
     }
 
 
