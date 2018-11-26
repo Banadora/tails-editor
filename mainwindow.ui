@@ -265,6 +265,9 @@
      </property>
     </widget>
     <widget class="QSpinBox" name="enemyDmg">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>180</x>
